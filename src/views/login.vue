@@ -12,13 +12,13 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/register">New here? Create an account</RouterLink>
       </div>
       <div class="c-inputField">
-        <div id="c-email">
-          <div id="c-iconEmail"></div>
-          <input type="text" placeholder="Email Adrees" />
+        <div class="cput c-email">
+          <div class="cicon c-iconEmail"></div>
+          <input type="text" placeholder="Email Adrees" class="input emailInput"/>
         </div>
-        <div id="c-password">
-          <div id="c-iconPassword"></div>
-          <input type="text" placeholder="Password">
+        <div class="cput c-password">
+          <div class="cicon c-iconPassword"></div>
+          <input type="text" placeholder="Password" class="input passInput">
         </div>
         <a href="">Forgort password?</a>
       </div>
@@ -35,5 +35,67 @@ import { RouterLink, RouterView } from 'vue-router'
     height: 100%;
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,49,83,1) 87%, rgba(60,44,123,1) 100%);
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .c-login {
+    width: 45%;
+    height: 80vh;
+    border-radius: 10px;
+    background-color: #E9E8EA;
+  }
+
+  .c-mainTxt {
+    width: 100%;
+    height: 20%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5vh;
+  }
+  
+  .c-mainTxt h1 {
+    font-size: 5vh;
+  }
+
+  .c-inputField {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .cput {
+    width: 90%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cicon {
+    width: 25%;
+    height: 100%;
+    background-color: blue;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .emailInput {
+    width: 75%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid black;
+  }
+
+  .passInput {
+    width: 75%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid black;
   }
 </style>
