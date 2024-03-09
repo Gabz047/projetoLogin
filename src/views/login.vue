@@ -1,5 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+
+const required = {
+  maxLenght: 10,
+  emailValidate: ["@gmail.com", "@hotmail.com"]
+  }
 </script>
 
 <!-- em identificadores como id ou class "c" signfica "container" -->
@@ -23,7 +28,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <a href="">Forgort password?</a>
       </div>
       <div class="c-btnLogin">
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-primary" @click="">Login</button>
       </div>
     </section>
   </main>
