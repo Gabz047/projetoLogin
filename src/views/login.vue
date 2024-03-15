@@ -28,7 +28,7 @@ const required = {
         <a href="">Forgort password?</a>
       </div>
       <div class="c-btnLogin">
-        <button type="submit" class="btn btn-primary" @click="">Login</button>
+        <button type="submit" class="btn btn-primary" @click="login">Login</button>
       </div>
     </section>
   </main>
@@ -50,6 +50,15 @@ const required = {
     height: 80vh;
     border-radius: 10px;
     background-color: #E9E8EA;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input {
+    padding: 10px;
   }
 
   .c-mainTxt {
@@ -69,7 +78,7 @@ const required = {
 
   .c-inputField {
     width: 100%;
-    height: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -78,7 +87,7 @@ const required = {
 
   .cput {
     width: 90%;
-    height: 20%;
+    height: 16%;
     display: flex;
     justify-content: space-between;
   }
@@ -102,5 +111,17 @@ const required = {
     height: 100%;
     border-radius: 0 10px 10px 0;
     border: 1px solid black;
+  }
+
+  .c-btnLogin {
+    width: 80%;
+    height: 8%;
+    background-color: aqua;
+    margin-bottom: 10%;
+  }
+
+  .btn {
+    width: 100%;
+    height: 100%;
   }
 </style>
