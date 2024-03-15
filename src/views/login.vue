@@ -64,7 +64,6 @@ const required = {
   .c-mainTxt {
     width: 100%;
     height: 20%;
-    background-color: aqua;
     display: flex;
     flex-direction: column;
     align-items: center;
