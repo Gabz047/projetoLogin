@@ -1,10 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import {ref} from 'vue'
+
+const passwordInput = ref('')
+const emailInput = ref('')
 
 const required = {
   maxLenght: 10,
   emailValidate: ["@gmail.com", "@hotmail.com"]
   }
+
 </script>
 
 <!-- em identificadores como id ou class "c" signfica "container" -->
@@ -19,11 +24,11 @@ const required = {
       <div class="c-inputField">
         <div class="cput c-email">
           <div class="cicon c-iconEmail"></div>
-          <input type="text" placeholder="Email Adrees" class="input emailInput"/>
+          <input type="text" placeholder="Email Adrees" class="input emailInput" v-model="emailInput" />
         </div>
         <div class="cput c-password">
           <div class="cicon c-iconPassword"></div>
-          <input type="text" placeholder="Password" class="input passInput">
+          <input type="text" placeholder="Password" class="input passInput" v-model="passwordInput" />
         </div>
         <a href="">Forgort password?</a>
       </div>
@@ -46,7 +51,7 @@ const required = {
   }
 
   .c-login {
-    width: 45%;
+    width: 35%;
     height: 80vh;
     border-radius: 10px;
     background-color: #E9E8EA;
@@ -59,6 +64,7 @@ const required = {
 
   .input {
     padding: 10px;
+    font-size: 20px;
   }
 
   .c-mainTxt {
@@ -72,7 +78,7 @@ const required = {
   }
   
   .c-mainTxt h1 {
-    font-size: 5vh;
+    font-size: 4.5vh;
   }
 
   .c-inputField {
@@ -86,7 +92,7 @@ const required = {
 
   .cput {
     width: 90%;
-    height: 16%;
+    height: 18%;
     display: flex;
     justify-content: space-between;
   }
