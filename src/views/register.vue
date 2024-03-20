@@ -4,6 +4,10 @@ import { ref, computed, reactive } from 'vue'
 
 // States & City
 
+const especiais = [
+'!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '{', '|',  '}', '~' 
+]
+
 const states = ref([
   'AC',
   'AL',
@@ -47,7 +51,7 @@ function addHobbie() {
 }
 
 function removeHobbie(index) {
-    mainInfo.hobbies.splice(index, 1)
+    hobbies.value.splice(index, 1)
 }
 
 
@@ -95,8 +99,16 @@ const mainInfo = reactive({
     bio: "", //done
 })
 
+
 function register() {
-    if (passwordV.value != validationV.value) {
+    let validatorEsp = ref(0);
+
+    for (let i = 0; i < especiais.length; i++) {
+    if (passwordV.value.includes(especiais[i]))
+        validatorEsp.value++;
+    }
+
+    if (passwordV.value != validationV.value || !emailV.value.includes("@") || validatorEsp.value < 1) {
         alert("Credentials invalide")
     } else {
     validate.value = true
@@ -137,7 +149,7 @@ function edit() {
         </div>
         <div class="hobbies-info">
             <p>Hobbies:</p>
-            <li v-for="(hobbie, index) in mainInfo.hobbies" :key="index"> {{ hobbie }}</li>
+            <li v-for="(hobbie, index) in hobbies" :key="index"> {{ hobbie }}</li>
         </div>
        
       
@@ -169,7 +181,7 @@ function edit() {
       <div class="cityState-field">
         <div class="city-field">
           <h2 class="desc city">City:</h2>
-          <input type="text" v-model="mainInfo.city"/>
+          <input type="text" class="inputCity" v-model="mainInfo.city"/>
         </div>
 
         <div class="states-field">
@@ -249,8 +261,8 @@ function edit() {
 main {
 
   width: 100%;
-  background-color: white;
-  height: 100vh;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,49,83,1) 87%, rgba(60,44,123,1) 100%);
+  height: 120vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,7 +370,7 @@ p {
 
 .register-field {
     width: 90%;
-    height: 95%;
+    height: 110vh;
     background-color: rgb(235, 235, 235);
     border-radius: 10px;
     display: flex;
@@ -368,7 +380,7 @@ p {
 .tittleMain {
     height: 8%;
     width: 90%;
-    background-color: aqua;
+    padding: 2px;
     display: flex;
     justify-content: center;
 }
@@ -379,7 +391,6 @@ p {
 .basicInfo-field {
     width: 90%;
     height: 30%;
-    background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -388,12 +399,97 @@ p {
 }
 
 .inputbasic {
-    height: 25%;
+    height: 30%;
     width: 30%;
     border-radius: 5px;
     border: 1px solid;
     padding: 1vh;
 }
+
+.cityState-field {
+    height: 8%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.cityState-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.city-field {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.states-field {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.inputCity {
+    height: 87%;
+    width: 76%;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 10px;
+}   
+
+.select {
+    height: 87%;
+    width: 71%;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+/** Langs & Hobbies field */
+
+.langHobbies-field {
+    height: 38%;
+    width: 90%;
+    background-color: aqua;
+}
+
+.langs-field {
+    width: 100%;
+    background-color: aquamarine;
+    display: flex;
+    height: 45%;
+    justify-content: space-between;
+}
+
+.langs-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    height: 70%;
+}
+
+.lang-options {
+    width: 83%;
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.lang-options label {
+    font-size: 3.2vh;
+}
+
+/** Langs & Hobbies field end :>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
 
 /** Register info end>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 </style>
