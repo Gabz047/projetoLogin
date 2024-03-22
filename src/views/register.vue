@@ -196,23 +196,35 @@ function edit() {
         <div class="langs-field">
           <h2>Languages:</h2>
           <div class="lang-options">
-            <label for='js'> JavaScript </label>
+            <label for='js' class="labelLang"> JavaScript 
             <input type="checkbox" value='js' class="check-lang" v-model="mainInfo.langs"/>
-
-            <label for=' go '> Go </label>
-            <input type="checkbox" value='go' class="check-lang" v-model="mainInfo.langs"/>
-
-            <label for=' ruby '> Ruby </label>
-            <input type="checkbox" value='ruby' class="check-lang" v-model="mainInfo.langs"/>
-
-            <label for=' py '> Python</label>
-            <input type="checkbox" value=' py ' class="check-lang" v-model="mainInfo.langs"/>
+            <span class="checkmark"></span>
+            </label>
             
-            <label for=' java '> Java </label>
-            <input type="checkbox" value='java' class="check-lang" v-model="mainInfo.langs"/>
+            <label for=' go ' class="labelLang"> Go 
+            <input type="checkbox" value='go' class="check-lang" v-model="mainInfo.langs"/>
+            <span class="checkmark"></span>
+            </label>
 
-            <label for=' c++ '> C++ </label>
+            <label for=' ruby ' class="labelLang"> Ruby 
+            <input type="checkbox" value='ruby' class="check-lang" v-model="mainInfo.langs"/>
+            <span class="checkmark"></span>
+            </label>
+
+            <label for=' py ' class="labelLang"> Python
+            <input type="checkbox" value=' py ' class="check-lang" v-model="mainInfo.langs"/>
+            <span class="checkmark"></span>
+            </label>
+
+            <label for=' java ' class="labelLang"> Java 
+            <input type="checkbox" value='java' class="check-lang" v-model="mainInfo.langs"/>
+            <span class="checkmark"></span>
+            </label>
+
+            <label for=' c++ ' class="labelLang"> C++ 
             <input type="checkbox" value=' c++ ' class="check-lang" v-model="mainInfo.langs"/>
+            <span class="checkmark"></span>
+            </label>
           </div>
         </div>
 
@@ -221,9 +233,11 @@ function edit() {
             <div class="hobbies-options">
                <div class="desc-input">
                 <h2>Hobbies:</h2>
+                <div class="group">
                 <input type="text" placeholder="Hobbies" v-model="hobbieV">
                 <button @click="addHobbie">></button>
-               </div>
+                </div>
+            </div>
                 <div class="lista-hobbies">
                     <li v-for="(hobbie, index) in hobbies" :key="index"> {{ hobbie }} <button @click="removeHobbie(index)">X</button> </li>
                 </div>
@@ -461,7 +475,7 @@ p {
     width: 100%;
     background-color: aquamarine;
     display: flex;
-    height: 45%;
+    height: 49%;
     justify-content: space-between;
 }
 
@@ -484,8 +498,57 @@ p {
 }
 
 .lang-options label {
-    font-size: 3.2vh;
+    font-size: 2.8vh;
 }
+
+.labelLangs {
+    display: block;
+}
+
+.labelLangs input {
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    width: 35px;
+    height: 35px;
+    background-color: rgb(252, 0, 0);
+}
+
+.hobbies-field {
+    width: 100%;
+    background-color: rgb(148, 148, 148);
+    display: flex;
+    justify-content: space-between;
+    height: 49%;
+    margin-top: 0.5%;
+}
+
+.hobbies-options {
+    width: 100%;
+}
+.desc-input {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    width: 38%;
+}
+
+.group {
+    display: flex;
+}
+
+.lista-hobbies {
+    width: 60%;
+    height: 100%;
+    background-color: black;
+}
+
+
 
 /** Langs & Hobbies field end :>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
