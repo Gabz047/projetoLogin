@@ -92,7 +92,7 @@ const mainInfo = reactive({
     password: "", //done
     email: "", //done
     adress: "", //done
-    city: "", //city
+    city: "", //city    
     state: "", //done
     langs: [], //done
     hobbies: [], //done
@@ -133,7 +133,7 @@ function edit() {
         <button @click="edit" class="btn btn-primary">Edit</button>
         <div class="img-field">
         <img  vi-if="avatar.photo" :src="avatar.photo">
-    </div>
+        </div>
 
     <div class="info-field">
         <p> User: {{ mainInfo.user }}</p>
@@ -154,9 +154,9 @@ function edit() {
        
       
         
-       
-        <p> Biography: {{ mainInfo.bio }}</p>
-
+       <div class="bio-info">
+        <p class="b-p"> Biography: {{ mainInfo.bio }}</p>
+        </div>
     </div>
 
     </section>
@@ -251,18 +251,19 @@ function edit() {
 
         <h2>biography: </h2>
 
-        <textarea cols="80" rows="5" v-model="mainInfo.bio"></textarea>
+        <textarea cols="80" rows="5" v-model="mainInfo.bio" maxlength="255"></textarea>
       </div>
 
       <div class="photo-field">
 
-        <h2>Profile-photo</h2>
+        <div class="group-pht">
+        <h2>Profile-photo:</h2>
 
         <input type="file" @change="handleFileUpload($event)" class="inputbasic">
-
+         </div>
       </div>
 
-      <button @click="register">Register</button>
+      <button @click="register" class="btn-regist">Register</button>
     </section>
 
    
@@ -276,7 +277,7 @@ main {
 
   width: 100%;
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,49,83,1) 87%, rgba(60,44,123,1) 100%);
-  height: 120vh;
+  height: 130vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -287,8 +288,8 @@ main {
 
 .userInfo {
     width: 80%;
-    height: 80vh;
-    background-color: rgb(235, 235, 235);
+    height: 100vh;
+    background-color: #E6E6E7;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -319,7 +320,8 @@ main {
 p {
     font-size: 2.5vh;
     padding: 1vh;
-    
+    background-color: #aeaeaf;
+    border-radius: 5px;
 }
 
 .info-field {
@@ -328,8 +330,8 @@ p {
     flex-direction: column;
     height: 100%;
     width: 60%;
-    justify-content: center;
     align-items: left;
+    margin-top: 8vh;
 }
 
 .langs-info {
@@ -338,6 +340,7 @@ p {
     padding: 1vh 0 0 0;
     border-radius: 10px;
     align-items:center;
+    margin-top: 1vh;
 }
 
 .langs-info li {
@@ -361,6 +364,7 @@ p {
     border-radius: 10px;
     align-items:center;
     padding: 1vh 0 0 0;
+    margin-top: 2vh
 }
 
 .hobbies-info li {
@@ -378,13 +382,20 @@ p {
     content: ",";
 }
 
+.bio-info {
+    background-color: #aeaeaf;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 2vh;
+}
+
 /** Info registered end>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 /** Register info */
 
 .register-field {
     width: 90%;
-    height: 110vh;
+    height: 120vh;
     background-color: rgb(235, 235, 235);
     border-radius: 10px;
     display: flex;
@@ -421,6 +432,7 @@ p {
 }
 
 .cityState-field {
+    margin-top: 1.5vh;
     height: 8%;
     width: 90%;
     display: flex;
@@ -433,18 +445,27 @@ p {
     border: 1px solid;
     border-radius: 5px;
     padding: 15px;
+    font-size: 3vh;
 }
 
 .city-field {
-    width: 40%;
+    width: 35%;
     display: flex;
     justify-content: space-between;
+}
+
+.city-field h2 {
+    font-size: 3vh;
 }
 
 .states-field {
     display: flex;
-    width: 40%;
+    width: 35%;
     justify-content: space-between;
+}
+
+select {
+    padding: 5px;
 }
 
 .inputCity {
@@ -468,12 +489,11 @@ p {
 .langHobbies-field {
     height: 38%;
     width: 90%;
-    background-color: aqua;
+    margin-top: 1.5vh;
 }
 
 .langs-field {
     width: 100%;
-    background-color: aquamarine;
     display: flex;
     height: 49%;
     justify-content: space-between;
@@ -484,12 +504,13 @@ p {
     border: 1px solid;
     border-radius: 5px;
     padding: 10px;
-    height: 70%;
+    height: 50%;
+    font-size: 3vh;
 }
 
 .lang-options {
     width: 83%;
-    height: 100%;
+    height: 80%;
     border-radius: 5px;
     border: 1px solid;
     display: flex;
@@ -518,15 +539,21 @@ p {
 
 .hobbies-field {
     width: 100%;
-    background-color: rgb(148, 148, 148);
     display: flex;
     justify-content: space-between;
     height: 49%;
     margin-top: 0.5%;
 }
 
+.hobbies-field h2 {
+    font-size: 3vh;
+}
+
 .hobbies-options {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
 }
 .desc-input {
     display: flex;
@@ -535,23 +562,133 @@ p {
     border: 1px solid;
     padding: 10px;
     border-radius: 5px;
-    width: 38%;
+    width: 35%;
+    height: 60%;
+}
+
+.desc-input input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+    border: 1px solid;
 }
 
 .group {
     display: flex;
+    justify-content: space-between;
+}
+
+.group button {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(118, 241, 118);
+    width: 18%;
 }
 
 .lista-hobbies {
     width: 60%;
-    height: 100%;
-    background-color: black;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow:hidden;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.lista-hobbies li {
+    list-style: none;
+    margin: 1vh 0 0 1vw;
+    padding: 5px 5px 0 5px  ;
+    height: 6vh;
+    border-radius: 5px;
+    background-color: rgba(173, 173, 173, 0.8);
+    border: 1px solid;
+}
+
+.lista-hobbies button {
+    background-color: rgb(240, 75, 75);
+    border: none;
+    border-radius: 5px;
 }
 
 
 
 /** Langs & Hobbies field end :>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
+/** Biography-field */
+
+.biography-field {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+    margin-top: 1.5vh;
+}
+
+.biography-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 3vh;
+    height: 8vh;
+}
+
+textarea {
+    border-radius: 5px;
+    width: 83%;
+    height: 80%;
+    border: 1px solid;
+    padding: 5px;
+}
+
+/** Biography-field END >>>>>>>>>>>>>*/
+
+
+/** Profile-photo */
+
+.photo-field {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+}
+
+.photo-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 3vh;
+    height: 8vh;
+}
+
+.photo-field input {
+    width: 60%;
+    height: 8vh;
+}
+
+.group-pht {
+    display: flex;
+    width: 34.2vw;
+    justify-content: space-between;
+}
+
+.btn-regist {
+    width: 40%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding: 10px;
+    border: 1px;
+    border-radius: 5px;
+    background-color: #5200FF;
+}
+
+.btn-regist:hover {
+    background-color: #6b2feb;
+}
+
+/** Profile-photo end >>>>>>>>>>> */
 
 
 /** Register info end>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
