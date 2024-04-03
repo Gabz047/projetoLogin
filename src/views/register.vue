@@ -145,17 +145,26 @@ function edit() {
         <p> State: {{  mainInfo.state }} </p>
         <div class="langs-info">
             <p>Languages:</p>
+            
             <li v-for="(lang, index) in mainInfo.langs" :key="index"> {{ lang }}</li>
+
         </div>
         <div class="hobbies-info">
             <p>Hobbies:</p>
+            <div class="hob">
+        
             <li v-for="(hobbie, index) in hobbies" :key="index"> {{ hobbie }}</li>
+    
+        </div>
         </div>
        
       
         
        <div class="bio-info">
-        <p class="b-p"> Biography: {{ mainInfo.bio }}</p>
+        <p>Biography: </p>
+        <div class="wrapper">
+        <p class="b-p"> {{ mainInfo.bio }}</p>
+        </div>
         </div>
     </div>
 
@@ -288,7 +297,7 @@ main {
 
 .userInfo {
     width: 80%;
-    height: 100vh;
+    height: 120vh;
     background-color: #E6E6E7;
     display: flex;
     flex-direction: column;
@@ -341,13 +350,18 @@ p {
     border-radius: 10px;
     align-items:center;
     margin-top: 1vh;
+    
 }
 
 .langs-info li {
     list-style: none;
     margin-left: 1vh 0 0 0;
     font-size: 2.5vh;
-    padding: 0;
+    margin-left: 1.5vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    background-color: #aeaeaf;
+    padding: 0.4vh;
 }
 
 .langs-info p {
@@ -360,18 +374,24 @@ p {
 
 .hobbies-info {
     display: flex;
-    height: 5vh;
+    max-height: 15vh;
     border-radius: 10px;
-    align-items:center;
+    align-items:flex-start;
     padding: 1vh 0 0 0;
-    margin-top: 2vh
+    margin-top: 2vh;
+    max-width: 100%;
 }
 
 .hobbies-info li {
     list-style: none;
     margin-left: 1vh 0 0 0;
     font-size: 2.5vh;
-    padding: 0;
+    margin-left: 1.5vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    background-color: #aeaeaf;
+    padding: 0.4vh;
+    width: auto;
 }
 
 .hobbies-info p {
@@ -387,6 +407,29 @@ p {
     height: auto;
     border-radius: 5px;
     margin-top: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    word-break:break-all;
+    max-width: 100%;
+    height: 100%;
+}
+
+.hob {
+    display: flex;
+    width: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+}
+
+.bio-info p {
+    font-size: 2.5vh;
 }
 
 /** Info registered end>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
@@ -583,6 +626,13 @@ select {
     border: none;
     background-color: rgb(118, 241, 118);
     width: 18%;
+    transition: 0.25s;
+}
+.group button:hover {
+    background-color: rgb(85, 221, 85);
+}
+.group button:active {
+    background-color: rgb(21, 109, 21);
 }
 
 .lista-hobbies {
@@ -593,6 +643,7 @@ select {
     overflow:hidden;
     border-radius: 5px;
     border: 1px solid;
+    overflow-y: scroll;
 }
 
 .lista-hobbies li {
@@ -609,6 +660,15 @@ select {
     background-color: rgb(240, 75, 75);
     border: none;
     border-radius: 5px;
+    transition: 0.25s;
+}
+
+.lista-hobbies button:hover {
+    background-color: rgb(218, 42, 42);
+}
+
+.lista-hobbies button:active {
+    background-color: rgb(139, 30, 30);
 }
 
 
