@@ -1,6 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import { ref, computed, reactive } from 'vue'
+import { ref, reactive } from 'vue'
 
 // States & City
 
@@ -144,13 +143,13 @@ function edit() {
         <p> City: {{ mainInfo.city }}</p>
         <p> State: {{  mainInfo.state }} </p>
         <div class="langs-info">
-            <p>Languages:</p>
+            <p class="nochange">Languages:</p>
             
             <li v-for="(lang, index) in mainInfo.langs" :key="index"> {{ lang }}</li>
 
         </div>
         <div class="hobbies-info">
-            <p>Hobbies:</p>
+            <p class="nochange">Hobbies:</p>
             <div class="hob">
         
             <li v-for="(hobbie, index) in hobbies" :key="index"> {{ hobbie }}</li>
@@ -175,22 +174,22 @@ function edit() {
         <h1>Create your account!</h1>
       </div>
       <div class="basicInfo-field">
-        <input type="text" class="inputbasic" placeholder="User" v-model="mainInfo.user" />
+        <input type="text" class="inputbasic" placeholder="User" v-model="mainInfo.user" maxlength="100"/>
 
         <input type="date" class="inputbasic" name="birth" min="1874-01-01" max="2014-01-01" v-model="mainInfo.date" />
 
-        <input type="text" class="inputbasic" placeholder="Password" v-model="passwordV"/>
+        <input type="text" class="inputbasic" placeholder="Password" v-model="passwordV" maxlength="30"/>
 
-        <input type="email" class="inputbasic" placeholder="Email" v-model="emailV"/>
+        <input type="email" class="inputbasic" placeholder="Email" v-model="emailV" maxlength="155"/>
 
-        <input type="text" class="inputbasic" placeholder="Adress" v-model="mainInfo.adress"/>
+        <input type="text" class="inputbasic" placeholder="Adress" v-model="mainInfo.adress" maxlength="100"/>
 
-        <input type="text" class="inputbasic" placeholder="Confirm Password" v-model="validationV"/>
+        <input type="text" class="inputbasic" placeholder="Confirm Password" v-model="validationV" maxlength="30"/>
       </div>
       <div class="cityState-field">
         <div class="city-field">
           <h2 class="desc city">City:</h2>
-          <input type="text" class="inputCity" v-model="mainInfo.city"/>
+          <input type="text" class="inputCity" v-model="mainInfo.city" maxlength="100"/>
         </div>
 
         <div class="states-field">
@@ -275,8 +274,6 @@ function edit() {
       <button @click="register" class="btn-regist">Register</button>
     </section>
 
-   
-
   </main>
 </template>
 
@@ -286,7 +283,7 @@ main {
 
   width: 100%;
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(56,49,83,1) 87%, rgba(60,44,123,1) 100%);
-  height: 130vh;
+  height: 160vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -295,9 +292,13 @@ main {
 
 /** Info registered */
 
+.nochange {
+    word-break: keep-all;
+}
+
 .userInfo {
     width: 80%;
-    height: 120vh;
+    height: 150vh;
     background-color: #E6E6E7;
     display: flex;
     flex-direction: column;
@@ -331,6 +332,8 @@ p {
     padding: 1vh;
     background-color: #aeaeaf;
     border-radius: 5px;
+    max-width: 100%;
+    word-break: break-all;
 }
 
 .info-field {
@@ -559,6 +562,7 @@ select {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: white
 }
 
 .lang-options label {
@@ -644,6 +648,7 @@ select {
     border-radius: 5px;
     border: 1px solid;
     overflow-y: scroll;
+    background-color: white
 }
 
 .lista-hobbies li {
