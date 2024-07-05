@@ -5,7 +5,8 @@
 
 .userInfo {
     width: 80%;
-    height: 150vh;
+    max-height: 140vh;
+    height: auto;
     background-color: #E6E6E7;
     display: flex;
     flex-direction: column;
@@ -52,6 +53,7 @@ p {
     width: 60%;
     align-items: left;
     margin-top: 8vh;
+    justify-content: space-between;
 }
 
 .langs-info {
@@ -117,7 +119,7 @@ p {
     background-color: #aeaeaf;
     height: auto;
     border-radius: 5px;
-    margin-top: 2vh;
+    margin-top: 7vh;
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;

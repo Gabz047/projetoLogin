@@ -2,7 +2,6 @@ import {reactive} from 'vue'
 
 export const mainInfo = reactive({
     user: "", 
-    date: "", 
     password: "",
     passwordconfirm: "",
     email: "", 
@@ -12,5 +11,6 @@ export const mainInfo = reactive({
     langs: [],
     hobbies: [],
     bio: "",
-    photo: null
+    photo: null,
+    date: ""
 })
