@@ -1,3 +1,6 @@
+<script setup>
+import { handleFileUpload } from '@/utils/formsFunctions';
+</script>
 <template>
      <div class="photo-field">
 

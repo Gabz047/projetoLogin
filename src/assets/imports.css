@@ -1,0 +1,10 @@
+@import './base.css';
+@import './basicInfo.css';
+@import './registerInfo.css';
+@import './cityState.css';
+@import './langsField.css';
+@import './hobbiesField.css';
+@import './langsHobbiesField.css';
+@import './biographyField.css';
+@import './photoField.css';
+@import './userInfo.css';

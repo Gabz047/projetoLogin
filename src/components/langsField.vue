@@ -1,3 +1,6 @@
+<script setup>
+import { mainInfo } from '@/utils/mainInfo';
+</script>
 <template>
      <div class="langs-field">
         <h2>Languages:</h2>

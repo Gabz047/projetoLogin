@@ -1,0 +1,28 @@
+.photo-field {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+}
+
+.photo-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 3vh;
+    height: 8vh;
+}
+
+.photo-field input {
+    width: 60%;
+    height: 8vh;
+}
+
+.group-pht {
+    display: flex;
+    width: 34.2vw;
+    justify-content: space-between;
+}
+
+

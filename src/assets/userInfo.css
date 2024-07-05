@@ -1,0 +1,144 @@
+
+.nochange {
+    word-break: keep-all;
+}
+
+.userInfo {
+    width: 80%;
+    height: 150vh;
+    background-color: #E6E6E7;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(7, 7, 7);
+}
+
+.userInfo button {
+    width: 80px;
+    margin: 2vh;
+}
+
+.userInfo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.img-field {
+    width: 15vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 1vh 0 0 2vh;
+}
+
+p {
+    font-size: 2.5vh;
+    padding: 1vh;
+    background-color: #aeaeaf;
+    border-radius: 5px;
+    max-width: 100%;
+    word-break: break-all;
+}
+
+.info-field {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    align-items: left;
+    margin-top: 8vh;
+}
+
+.langs-info {
+    display: flex;
+    height: 5vh;
+    padding: 1vh 0 0 0;
+    border-radius: 10px;
+    align-items:center;
+    margin-top: 1vh;
+    
+}
+
+.langs-info li {
+    list-style: none;
+    margin-left: 1vh 0 0 0;
+    font-size: 2.5vh;
+    margin-left: 1.5vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    background-color: #aeaeaf;
+    padding: 0.4vh;
+}
+
+.langs-info p {
+    padding: 1vh 1vh 0 1vh;
+}
+
+.langs-info li::after {
+    content: ",";
+}
+
+.hobbies-info {
+    display: flex;
+    max-height: 15vh;
+    border-radius: 10px;
+    align-items:flex-start;
+    padding: 1vh 0 0 0;
+    margin-top: 2vh;
+    max-width: 100%;
+}
+
+.hobbies-info li {
+    list-style: none;
+    margin-left: 1vh 0 0 0;
+    font-size: 2.5vh;
+    margin-left: 1.5vh;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    background-color: #aeaeaf;
+    padding: 0.4vh;
+    width: auto;
+}
+
+.hobbies-info p {
+    padding: 1vh 1vh 0 1vh;
+}
+
+.hobbies-info li::after {
+    content: ",";
+}
+
+.bio-info {
+    background-color: #aeaeaf;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    word-break:break-all;
+    max-width: 100%;
+    height: 100%;
+}
+
+.hob {
+    display: flex;
+    width: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+}
+
+.bio-info p {
+    font-size: 2.5vh;
+}

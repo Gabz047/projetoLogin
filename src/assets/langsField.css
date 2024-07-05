@@ -1,0 +1,46 @@
+.langs-field {
+    width: 100%;
+    display: flex;
+    height: 49%;
+    justify-content: space-between;
+}
+
+.langs-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    height: 50%;
+    font-size: 3vh;
+}
+
+.lang-options {
+    width: 83%;
+    height: 80%;
+    border-radius: 5px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white
+}
+
+.lang-options label {
+    font-size: 2.8vh;
+}
+
+.labelLangs {
+    display: block;
+}
+
+.labelLangs input {
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    width: 35px;
+    height: 35px;
+    background-color: rgb(252, 0, 0);
+}
+

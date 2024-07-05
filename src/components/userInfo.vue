@@ -1,8 +1,13 @@
+<script setup>
+import { validate, edit } from '@/utils/formsFunctions';
+import { mainInfo } from '@/utils/mainInfo';
+</script>
+
 <template>
-    <section class="userInfo container-fluid" v-if="validate == true">
+    <section class="userInfo">
         <button @click="edit" class="btn btn-primary">Edit</button>
         <div class="img-field">
-        <img  vi-if="avatar.photo" :src="avatar.photo">
+        <img  v-if="mainInfo.photo" :src="mainInfo.photo">
         </div>
 
     <div class="info-field">
@@ -23,7 +28,7 @@
             <p class="nochange">Hobbies:</p>
             <div class="hob">
         
-            <li v-for="(hobbie, index) in hobbies" :key="index"> {{ hobbie }}</li>
+            <li v-for="(hobbie, index) in mainInfo.hobbies" :key="index"> {{ hobbie }}</li>
     
         </div>
         </div>
