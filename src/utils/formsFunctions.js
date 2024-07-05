@@ -1,5 +1,5 @@
     
-    import {ref, reactive} from 'vue'
+    import {ref} from 'vue'
     import { mainInfo } from './mainInfo'
     const especiais = [
     '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '{', '|',  '}', '~' 
