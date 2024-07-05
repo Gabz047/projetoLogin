@@ -128,152 +128,6 @@ function edit() {
 <template>
   <main>
 
-    <section class="userInfo container-fluid" v-if="validate == true">
-        <button @click="edit" class="btn btn-primary">Edit</button>
-        <div class="img-field">
-        <img  vi-if="avatar.photo" :src="avatar.photo">
-        </div>
-
-    <div class="info-field">
-        <p> User: {{ mainInfo.user }}</p>
-        <p> Password: {{ mainInfo.password }}</p>
-        <p> Email: {{ mainInfo.email }}</p>
-        <p> Birthday Date: {{ mainInfo.date }}</p>
-        <p> Adress: {{ mainInfo.adress }}</p>
-        <p> City: {{ mainInfo.city }}</p>
-        <p> State: {{  mainInfo.state }} </p>
-        <div class="langs-info">
-            <p class="nochange">Languages:</p>
-            
-            <li v-for="(lang, index) in mainInfo.langs" :key="index"> {{ lang }}</li>
-
-        </div>
-        <div class="hobbies-info">
-            <p class="nochange">Hobbies:</p>
-            <div class="hob">
-        
-            <li v-for="(hobbie, index) in hobbies" :key="index"> {{ hobbie }}</li>
-    
-        </div>
-        </div>
-       
-      
-        
-       <div class="bio-info">
-        <p>Biography: </p>
-        <div class="wrapper">
-        <p class="b-p"> {{ mainInfo.bio }}</p>
-        </div>
-        </div>
-    </div>
-
-    </section>
-
-    <section class="register-field" v-else>
-      <div class="tittleMain">
-        <h1>Create your account!</h1>
-      </div>
-      <div class="basicInfo-field">
-        <input type="text" class="inputbasic" placeholder="User" v-model="mainInfo.user" maxlength="100"/>
-
-        <input type="date" class="inputbasic" name="birth" min="1874-01-01" max="2014-01-01" v-model="mainInfo.date" />
-
-        <input type="text" class="inputbasic" placeholder="Password" v-model="passwordV" maxlength="30"/>
-
-        <input type="email" class="inputbasic" placeholder="Email" v-model="emailV" maxlength="155"/>
-
-        <input type="text" class="inputbasic" placeholder="Adress" v-model="mainInfo.adress" maxlength="100"/>
-
-        <input type="text" class="inputbasic" placeholder="Confirm Password" v-model="validationV" maxlength="30"/>
-      </div>
-      <div class="cityState-field">
-        <div class="city-field">
-          <h2 class="desc city">City:</h2>
-          <input type="text" class="inputCity" v-model="mainInfo.city" maxlength="100"/>
-        </div>
-
-        <div class="states-field">
-          <h2 class="desc states">State:</h2>
-          <select class="select states-select" v-model="mainInfo.state">
-            <option v-for="(state, index) in states" :key="index">{{ state }}</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="langHobbies-field">
-        <div class="langs-field">
-          <h2>Languages:</h2>
-          <div class="lang-options">
-            <label for='js' class="labelLang"> JavaScript 
-            <input type="checkbox" value='js' class="check-lang" v-model="mainInfo.langs"/>
-            <span class="checkmark"></span>
-            </label>
-            
-            <label for=' go ' class="labelLang"> Go 
-            <input type="checkbox" value='go' class="check-lang" v-model="mainInfo.langs"/>
-            <span class="checkmark"></span>
-            </label>
-
-            <label for=' ruby ' class="labelLang"> Ruby 
-            <input type="checkbox" value='ruby' class="check-lang" v-model="mainInfo.langs"/>
-            <span class="checkmark"></span>
-            </label>
-
-            <label for=' py ' class="labelLang"> Python
-            <input type="checkbox" value=' py ' class="check-lang" v-model="mainInfo.langs"/>
-            <span class="checkmark"></span>
-            </label>
-
-            <label for=' java ' class="labelLang"> Java 
-            <input type="checkbox" value='java' class="check-lang" v-model="mainInfo.langs"/>
-            <span class="checkmark"></span>
-            </label>
-
-            <label for=' c++ ' class="labelLang"> C++ 
-            <input type="checkbox" value=' c++ ' class="check-lang" v-model="mainInfo.langs"/>
-            <span class="checkmark"></span>
-            </label>
-          </div>
-        </div>
-
-        <div class="hobbies-field">
-
-            <div class="hobbies-options">
-               <div class="desc-input">
-                <h2>Hobbies:</h2>
-                <div class="group">
-                <input type="text" placeholder="Hobbies" v-model="hobbieV">
-                <button @click="addHobbie">></button>
-                </div>
-            </div>
-                <div class="lista-hobbies">
-                    <li v-for="(hobbie, index) in hobbies" :key="index"> {{ hobbie }} <button @click="removeHobbie(index)">X</button> </li>
-                </div>
-
-            </div>
-
-        </div>
-      </div>
-
-      <div class="biography-field">
-
-        <h2>biography: </h2>
-
-        <textarea cols="80" rows="5" v-model="mainInfo.bio" maxlength="255"></textarea>
-      </div>
-
-      <div class="photo-field">
-
-        <div class="group-pht">
-        <h2>Profile-photo:</h2>
-
-        <input type="file" @change="handleFileUpload($event)" class="inputbasic">
-         </div>
-      </div>
-
-      <button @click="register" class="btn-regist">Register</button>
-    </section>
-
   </main>
 </template>
 
@@ -438,44 +292,6 @@ p {
 /** Info registered end>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 /** Register info */
-
-.register-field {
-    width: 90%;
-    height: 120vh;
-    background-color: rgb(235, 235, 235);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.tittleMain {
-    height: 8%;
-    width: 90%;
-    padding: 2px;
-    display: flex;
-    justify-content: center;
-}
-.tittleMain h1 {
-    font-size: 6vh;
-}
-
-.basicInfo-field {
-    width: 90%;
-    height: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2%;
-}
-
-.inputbasic {
-    height: 30%;
-    width: 30%;
-    border-radius: 5px;
-    border: 1px solid;
-    padding: 1vh;
-}
 
 .cityState-field {
     margin-top: 1.5vh;
@@ -739,19 +555,7 @@ textarea {
     justify-content: space-between;
 }
 
-.btn-regist {
-    width: 40%;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    padding: 10px;
-    border: 1px;
-    border-radius: 5px;
-    background-color: #5200FF;
-}
 
-.btn-regist:hover {
-    background-color: #6b2feb;
-}
 
 /** Profile-photo end >>>>>>>>>>> */
 
