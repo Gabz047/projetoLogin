@@ -1,0 +1,91 @@
+.hobbies-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 49%;
+    margin-top: 0.5%;
+}
+
+.hobbies-field h2 {
+    font-size: 3vh;
+}
+
+.hobbies-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.desc-input {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 5px;
+    width: 35%;
+    height: 60%;
+}
+
+.desc-input input {
+    padding: 5px;
+    border-radius: 5px;
+    width: 80%;
+    border: 1px solid;
+}
+
+.group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.group button {
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(118, 241, 118);
+    width: 18%;
+    transition: 0.25s;
+}
+.group button:hover {
+    background-color: rgb(85, 221, 85);
+}
+.group button:active {
+    background-color: rgb(21, 109, 21);
+}
+
+.lista-hobbies {
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow:hidden;
+    border-radius: 5px;
+    border: 1px solid;
+    overflow-y: scroll;
+    background-color: white
+}
+
+.lista-hobbies li {
+    list-style: none;
+    margin: 1vh 0 0 1vw;
+    padding: 5px 5px 0 5px  ;
+    height: 6vh;
+    border-radius: 5px;
+    background-color: rgba(173, 173, 173, 0.8);
+    border: 1px solid;
+}
+
+.lista-hobbies button {
+    background-color: rgb(240, 75, 75);
+    border: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+.lista-hobbies button:hover {
+    background-color: rgb(218, 42, 42);
+}
+
+.lista-hobbies button:active {
+    background-color: rgb(139, 30, 30);
+}

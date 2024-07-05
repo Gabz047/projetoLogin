@@ -1,0 +1,25 @@
+.biography-field {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vh;
+    margin-top: 1.5vh;
+}
+
+.biography-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 3vh;
+    height: 8vh;
+}
+
+textarea {
+    border-radius: 5px;
+    width: 83%;
+    height: 80%;
+    border: 1px solid;
+    padding: 5px;
+}
+

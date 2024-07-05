@@ -1,0 +1,53 @@
+.cityState-field {
+    margin-top: 1.5vh;
+    height: 8%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.cityState-field h2 {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 3vh;
+}
+
+.city-field {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.city-field h2 {
+    font-size: 3vh;
+}
+
+.states-field {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+}
+
+select {
+    padding: 5px;
+}
+
+.inputCity {
+    height: 87%;
+    width: 76%;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 10px;
+}   
+
+.select {
+    height: 87%;
+    width: 71%;
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 10px;
+}
+
