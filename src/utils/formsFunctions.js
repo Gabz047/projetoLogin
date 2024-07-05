@@ -1,7 +1,6 @@
     
     import {ref, reactive} from 'vue'
     import { mainInfo } from './mainInfo'
-    import {inputs} from './inputsBasic'
     const especiais = [
     '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '{', '|',  '}', '~' 
     ]
@@ -38,10 +37,10 @@
 
         if (mainInfo.password != mainInfo.passwordconfirm || !mainInfo.email.includes('@') || validatorEsp.value <= 0 || mainInfo.password == '') {
             alert("Prencha os campos corretamente!")
-            console.log(inputs.value)
+           
         } else {
             validate.value = true
-            console.log(validate.value)
+          
         }
 
     }
